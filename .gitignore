@@ -1,1 +1,48 @@
+# Build outputs
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+
+# IDE files
+.vs/
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# NuGet packages
+packages/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+logs/
+
+# OS generated files
+Thumbs.db
+.DS_Store
+._*
+
+# Node.js (if using npm for frontend)
+node_modules/
+
+# Environment-specific settings (if they contain secrets)
+# appsettings.*.json  # Uncomment if needed
+
+# Database files
+*.db
+*.sqlite
+
+# Docker
+.dockerignore
+
+# Miscellaneous
+*.bak
+*.orig
+
+#system-design
 system-design.md
