@@ -7,4 +7,5 @@ public class Agent
     public string? Email { get; set; }
     public string? Phone { get; set; }
     public string? Agency { get; set; }
+    public ICollection<Policy>? Policies { get; set; }
 }

@@ -8,5 +8,6 @@ public class Policy
     public Client? Client { get; set; }
     public int AgentId { get; set; }
     public Agent? Agent { get; set; }
+    public ICollection<Claim>? Claims { get; set; }
 
 }

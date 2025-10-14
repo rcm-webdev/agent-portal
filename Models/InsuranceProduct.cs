@@ -8,4 +8,5 @@ public class InsuranceProduct
     public string? CoverageSummary { get; set; } // Brief description
     public string? EligibilityNotes { get; set; } // Who qualifies
     public string? QuickLinks { get; set; } // URLs or attachments
+    public ICollection<Policy>? Policies { get; set; }
 }
