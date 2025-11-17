@@ -1,8 +1,104 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+@{
+    ViewData["Title"] = "Dashboard";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container">
+    <h1 class="mb-4">Agent Dashboard</h1>
+
+    <div class="row mb-4">
+        <div class="col-6 col-md-2">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">@ViewBag.ClientCount</h5>
+                    <p class="card-text">Clients</p>
+                    <a href="@Url.Action("Index", "Clients")" class="btn btn-primary">View</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-2">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">@ViewBag.PolicyCount</h5>
+                    <p class="card-text">Policies</p>
+                    <a href="@Url.Action("Index", "Policies")" class="btn btn-primary">View</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-2">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">@ViewBag.ClaimCount</h5>
+                    <p class="card-text">Claims</p>
+                    <a href="@Url.Action("Index", "Claims")" class="btn btn-primary">View</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-2">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">@ViewBag.AgentCount</h5>
+                    <p class="card-text">Agents</p>
+                    <a href="@Url.Action("Index", "Agents")" class="btn btn-primary">View</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-2">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">@ViewBag.ProductCount</h5>
+                    <p class="card-text">Products</p>
+                    <a href="@Url.Action("Index", "InsuranceProducts")" class="btn btn-primary">View</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Recent Claims</h3>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Policy ID</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var claim in ViewBag.RecentClaims)
+                        {
+                            <tr>
+                                <td>@claim.Id</td>
+                                <td>@claim.PolicyId</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h3>Recent Policies</h3>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Client</th>
+                            <th>Product</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var policy in ViewBag.RecentPolicies)
+                        {
+                            <tr>
+                                <td>@policy.Id</td>
+                                <td>@(policy.Client?.Name ?? "N/A")</td>
+                                <td>@(policy.Product?.Name ?? "N/A")</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
