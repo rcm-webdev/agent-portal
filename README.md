@@ -1,0 +1,3 @@
+# Agent Portal
+
+Insurance Agent Portal - A full-stack web application for managing insurance agency operations. Track agents, clients, insurance products, policies, and claims in one centralized system. Built with ASP.NET Core MVC, Entity Framework Core, and PostgreSQL. Features complete CRUD operations for all entities, with relational data modeling connecting agents to clients through policies and products. Ideal for small to medium insurance agencies looking to digitize their operations.
